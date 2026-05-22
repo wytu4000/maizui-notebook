@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>買醉備忘錄</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: #f5f0e8;
+    min-height: 100vh;
+    padding: 24px 16px;
+    background-image: repeating-linear-gradient(transparent, transparent 27px, #d6cfc4 28px);
+  }
+  .notebook {
+    max-width: 800px; margin: 0 auto;
+    background: #fffef5; border-radius: 4px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.15);
+    overflow: hidden; border-left: 4px solid #c8a882;
+  }
+  .notebook-header {
+    background: #2c3e50; padding: 20px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .notebook-header h1 { color: #f5f0e8; font-size: 18px; font-weight: 700; letter-spacing: 2px; }
+  .notebook-header span { color: #a0b0c0; font-size: 12px; }
+  .project { border-bottom: 1px solid #e8e0d0; }
+  .project-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 28px; cursor: pointer;
+    background: #fffef5; transition: background 0.15s; user-select: none;
+  }
+  .project-header:hover { background: #f5f0e8; }
+  .project-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #2c3e50; color: #f5f0e8;
+    font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .project-title { font-size: 15px; font-weight: 700; color: #2c3e50; flex: 1; }
+  .project-toggle { color: #a0a0a0; font-size: 12px; transition: transform 0.2s; }
+  .project.open .project-toggle { transform: rotate(180deg); }
+  .project-body { display: none; padding: 16px 28px 20px 60px; }
+  .project.open .project-body { display: block; }
+  .date-tag { font-size: 11px; color: #a0907c; margin-bottom: 14px; font-style: italic; }
+  .section-title {
+    font-size: 12px; font-weight: 700; color: #8b6a4a;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin: 14px 0 8px; border-bottom: 1px dashed #e0d8cc; padding-bottom: 4px;
+  }
+  .entry-items { list-style: none; margin-bottom: 10px; }
+  .entry-items li {
+    font-size: 13.5px; color: #3a3a3a;
+    line-height: 1.8; padding-left: 14px; position: relative;
+  }
+  .entry-items li::before {
+    content: '─'; position: absolute; left: 0;
+    color: #c8a882; font-size: 10px; top: 4px;
+  }
+  .entry-items li a { color: #2c7bb6; text-decoration: none; word-break: break-all; font-size: 12.5px; }
+  .entry-items li a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="notebook">
+  <div class="notebook-header">
+    <h1>📒 買醉備忘錄</h1>
+    <span>新買醉餐酒館 裝修企劃</span>
+  </div>
+
+  <!-- #1 設備軟體 -->
+  <div class="project open" id="proj1">
+    <div class="project-header" onclick="toggle('proj1')">
+      <div class="project-num">1</div>
+      <div class="project-title">設備軟體</div>
+      <span class="project-toggle">▼</span>
+    </div>
+    <div class="project-body">
+      <div class="date-tag">建立於 2026-05-22</div>
+
+      <div class="section-title">D3延伸｜遊戲桌</div>
+      <ul class="entry-items">
+        <li>品牌：三次猿（深圳）科技有限公司 BOOZE BASH</li>
+        <li>特色：40+ 款喝酒遊戲、公平秤精準計算罰酒</li>
+        <li>定位：酒吧 KTV 增收神器、讓客人多待 2 小時</li>
+        <li>購買洽詢：深圳三次猿｜抖音私信</li>
+        <li>構想：打通後一側卡座、一側遊戲桌，增加互動感</li>
+        <li>影片參考：<a href="https://v.douyin.com/lmrM7kGdKvU/" target="_blank">https://v.douyin.com/lmrM7kGdKvU/</a></li>
+      </ul>
+
+      <div class="section-title">包廂設備</div>
+      <ul class="entry-items">
+        <li>茶几 1：<a href="https://vt.tiktok.com/ZSxDQ7n8m/" target="_blank">https://vt.tiktok.com/ZSxDQ7n8m/</a></li>
+        <li>茶几 2：<a href="https://vt.tiktok.com/ZSxhnVK5x/" target="_blank">https://vt.tiktok.com/ZSxhnVK5x/</a></li>
+        <li>KTV特效AI打碟：<a href="https://v.douyin.com/Ag3RxnKCths/" target="_blank">https://v.douyin.com/Ag3RxnKCths/</a></li>
+        <li>皇尊集團 2-3樓：<a href="https://vt.tiktok.com/ZSxhtBT45/" target="_blank">https://vt.tiktok.com/ZSxhtBT45/</a></li>
+        <li>燈光編程 1：<a href="https://vt.tiktok.com/ZSxU9a6Y5/" target="_blank">https://vt.tiktok.com/ZSxU9a6Y5/</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- #2 包廂設計 -->
+  <div class="project open" id="proj2">
+    <div class="project-header" onclick="toggle('proj2')">
+      <div class="project-num">2</div>
+      <div class="project-title">包廂設計靈感參考</div>
+      <span class="project-toggle">▼</span>
+    </div>
+    <div class="project-body">
+      <div class="date-tag">建立於 2026-05-22</div>
+      <div class="section-title">參考案例</div>
+      <ul class="entry-items">
+        <li>案例 1｜高雄：<a href="https://vt.tiktok.com/ZSxD9u76y/" target="_blank">https://vt.tiktok.com/ZSxD9u76y/</a></li>
+        <li>案例 2｜台中：<a href="https://vt.tiktok.com/ZSxD99x89/" target="_blank">https://vt.tiktok.com/ZSxD99x89/</a></li>
+        <li>案例 3｜桃園：<a href="https://vt.tiktok.com/ZSxDxLFoc/" target="_blank">https://vt.tiktok.com/ZSxDxLFoc/</a></li>
+        <li>案例 4｜貨櫃式包廂：<a href="https://vt.tiktok.com/ZSxD9nkgH/" target="_blank">https://vt.tiktok.com/ZSxD9nkgH/</a></li>
+        <li>案例 5｜抖音：<a href="https://vt.tiktok.com/ZSxkANdFV/" target="_blank">https://vt.tiktok.com/ZSxkANdFV/</a></li>
+        <li>案例 6｜抖音：<a href="https://vt.tiktok.com/ZSxMbCvNf/" target="_blank">https://vt.tiktok.com/ZSxMbCvNf/</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- #3 裝修工程 -->
+  <div class="project open" id="proj3">
+    <div class="project-header" onclick="toggle('proj3')">
+      <div class="project-num">3</div>
+      <div class="project-title">裝修工程參考</div>
+      <span class="project-toggle">▼</span>
+    </div>
+    <div class="project-body">
+      <div class="date-tag">建立於 2026-05-22</div>
+      <div class="section-title">屋頂防水</div>
+      <ul class="entry-items">
+        <li><a href="https://www.facebook.com/share/r/1G48i68uU2/?mibextid=wwXIfr" target="_blank">Facebook 影片</a></li>
+      </ul>
+      <div class="section-title">擬定合約參考</div>
+      <ul class="entry-items">
+        <li><a href="https://www.facebook.com/share/v/1CJ9BWoSQ5/?mibextid=wwXIfr" target="_blank">Facebook 影片</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggle(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+</script>
+</body>
+</html>
